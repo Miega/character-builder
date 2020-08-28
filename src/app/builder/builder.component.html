@@ -1,0 +1,42 @@
+<div class="container text-container">
+    <h1>Character Builder Form</h1>
+    <form [hidden]="submitted" #characterForm="ngForm" (ngSubmit)="onSubmit(characterForm)">
+        <div class="form-group row">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"
+            required
+            [(ngModel)]="model.name" name="name">
+            <label for='personality'>Personality</label>
+            <select class="form-control" id="personality" required
+            [(ngModel)]="model.personality" name="personality">
+                <option *ngFor="let per of personality" [value]="per">{{per}}</option>
+            </select>
+            <label for='career'>Career</label>
+            <select class="form-control" id="career" required 
+            [(ngModel)]="model.career" name="career">
+                <option *ngFor="let career of career" [value]="career">{{career}}</option>
+            </select>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <div [hidden]="!submitted" class="">
+        <h4>You submitted the following:</h4>
+        <div class="row row-content">
+            <div class="col-md"><strong>Name: </strong> {{ model.name }}</div>
+        </div>
+        <div class="row row-content">
+            <div class="col-md"><strong>Personality: </strong>{{ model.personality }}</div>
+        </div>
+        <div class="row row-content">
+            <div class="col-md"><strong>Career: </strong> {{ model.career }}</div>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" (click)="submitted=false">Edit Character</button>
+        </div>
+
+    </div>
+
+</div>

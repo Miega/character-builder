@@ -1,0 +1,58 @@
+$lt-gray: #ddd
+$offwhite: #ededed
+$background-dark: #00cc66
+$background-light: #00e673
+$background-pale: #1aff8c
+
+@mixin zero-margin($pad-up-dn, $pad-left-right)
+    margin: 0px
+    padding: $pad-up-dn, $pad-left-right
+
+.row-header
+    @include zero-margin(0px,0px)
+
+.row-content
+    @include zero-margin(50px,0px)
+    border-bottom: 1px ridge
+
+.jumbotron
+    @include zero-margin(70px,30px)
+    background: $offwhite
+
+.text-container, .btn-container
+    margin-top: 40px
+    padding-bottom: 40px
+
+.navbar-dark
+    background-color: $background-dark
+
+.btn-success
+    background-color: $background-dark
+    border-color: $background-dark
+
+.ng-valid[required], .ng-valid.required
+  border-left: 5px solid #42A948
+
+.ng-invalid:not(form)
+  border-left: 5px solid #a94442
+
+.blog-divider
+    max-width: 5rem
+    border-width: 0.33rem
+    border-color: $background-pale
+    margin-bottom: 2rem
+    margin-top: 2rem
+
+.img-blog-thumb
+    margin-bottom: 8px
+    border-radius: 8px
+
+html
+    height: 100%
+
+body
+    padding: 50px 0px 0px 0px
+    z-index: 0
+    background-image: url(./assets/img/spikes.png)
+    position: relative
+    min-height: 100%
